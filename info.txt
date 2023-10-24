@@ -1,0 +1,215 @@
+chromedriver driver= new chromedriver(); 
+class methods only
+
+interface methods
+Webdriver driver = new chromedriver();
+
+driver.close();  
+close only tab
+driver.quit();
+close all assoiscated windows
+-------------------------console----------------------------------------
+<p  class='error'    >
+$('p.error)	
+$x('p.error)
+//selenuim manager
+------------------------------------------------------------------------------------------------------------------------------------------
+//8 locators
+1.Id
+2.name
+3.tagname
+4.xpath
+5.css selector
+6.classname
+7.linktext 
+8.partial linktext
+-----------------------css selector-------------------------------------------------------------------------------------------------------------
+    <input type="text" placeholder="Usrtname" value="">
+	ClassName >>> tagname.className  input.className
+	id        >>> tagname#ID         input.id
+	tagname[attrubure='value']       input[type='text']
+	tagname[attrubure='value']:nth-child(index)
+    partentTag chilTag	
+-----------------------wait---------------------------------------------   
+   implict.manage.wait(Duration.sec());
+-----------------------xpath--------------------------------------------
+//Tagname[@attrubure='value']
+//input[@type='text'][index]
+
+<input type="text" placeholder="Username">
+//input[@placeholder=’Username’]
+
+//Tagname[@attribute=’value’][index]
+//parentTagname/childTagname
+
+//button[contains(@class,'submit')]  – Regular expression 
+//tagname
+
+//header/div/button[1]/following-sibling::button[1]
+
+//header/div/button[1]/parent::div
+-----------------------css selector-------------------------------------
+input[type='text']:nth-child(index)
+-----------------tags travels-------------------------------------------
+Xpath selector
+//partentTag/childlTag
+	//form/h1[index]
+	//form/input[3]
+	//header/div/button[1]
+
+css selector
+partentTag childlTag
+  form h1
+--------------------------* start regulare expersion--------------------
+when attribute is changed
+<input type='password' />
+
+CSS
+input[type*='pass']
+div[class*='pwd']
+
+Xpath
+//input[contains(@type,'password')]
+//div[contains(@class,"pw")]
+---------------------text()-----------------------------------------------------
+Xpath
+//button[text()='Log Out']
+
+----------------------contains()-----------------------------------------------
+xpath
+//button[contains(text(),'Login')]
+
+-------parent/child only--------------------------------------------------------
+absolute xpath
+start with /
+/html/body/header/button 
+
+relateive xpath	
+start with //	
+//header/button[1]	
+
+
+Example :
+<button class="btn btn-primary">practice</button>
+<button class="btn btn-primary">login</button>
+<button class="btn btn-primary">Signup</button>
+
+solve : 
+//header/div/button[1]/following-sibling::button[1]	
+
+//header/div/button[1]         from parent to child 
+/following-sibling::button[1]  from sibling to sibling
+ -----------------traverse from child to parent-----::parent--------------------------------------------------------------
+                 child/parent::tagname
+//header/div/button[1]/parent::div
+//header/div/button[1]/parent::div/parent::header
+
+----------------get()--navigate().to()----------------------------------
+get()         -> get fully loaded + wait
+navigate().to -> navigate to website  
+
+------------------------------------------------------------------------
+1.Static Drowdownp-select 
+2.Dynamic dropdown with indexes
+3.Parent child relathionship xpath   -> parent space child
+			   
+Xpath selector -> //li[@class="ui-menu-item"]/a
+css selector   -> li[class="ui-menu-item"] a
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TestNg testing framework for assertion	
+-------------------------------------checkbox checked or not checked---------------------------------
+ISselected()
+-----------------------------------------------------------------------------------------------------
+if you find space remove spacecs and add .
+css selector >> .className 	
+-------------------------radio button--------------------------------------------------------
+isenabled()
+---------------------------------------------------------------------------------------------	
+	Framework
+	https://rahulshettyacademy.com/client
+	dexcomnew98@gmail.com
+	User123#
+
+---------------------stream----------------------------------------------------------------------------------
+      cartProducts.stream().filter(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));	
+----------------------anyMatch------------------------------------------------------------------------------------
+anyMatch return boolen
+
+	  cartProducts.stream().anyMatch(cartProduct -> cartProduct.getText().equalsIgnoreCase(productName));
+-------------------------------------------------------------------------------------------------
+traverse from parent to child 
+.className from  className from child 
+.totalRow button
+-----------------------------actions ------------------build perform---------------------------------------
+1.have tests webdriver driver = new chromedriver();
+2.creata class page1 
+{ 
+ Webdriver driver ;
+ public page1(webdriver driver) 
+{
+ this.driver = driver;
+}
+3.add constractor() for landing page1
+4.pass webdriver driver  dh from tests and add then into
+- webdriver dh-driver 
+- WebDriver driver;
+ public LandingPage(WebDriver driver){
+  this.driver=driver; //driver comes from test after create LandingPage landingPageobj = new LandingPage(driver); //driver from tests
+  }
+-------------------------------super(driver)------------------------------------------------------
+traveirse driver from child to parent
+tests > driver >landing page (childmethods) >  super > extent > (parentmethods)
+  /*
+    This class contains all common methods
+    use it by extend child class from this parent
+    use it also by super(driver);
+    driver comes from testcase
+    driver pass to super(driver);
+    then create a constructor inside parent
+     */
+	 
+	-----------------------------------
+	thread count = 5
+	allow five methods to run parallelly 
+	
+	  <test thread-count="1" name="Submit Order Test">
+    <classes>
+      <class name="Selenuim.tests.SubmitOrderTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+	thread count = 1
+    one method in this class at time is allowed to run parallelly  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
