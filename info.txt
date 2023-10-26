@@ -174,7 +174,7 @@ tests > driver >landing page (childmethods) >  super > extent > (parentmethods)
 	
 	  <test thread-count="1" name="Submit Order Test">
     <classes>
-      <class name="Selenuim.tests.SubmitOrderTest"/>
+      <class name="SubmitOrderTest"/>
     </classes>
   </test> <!-- Test -->
 

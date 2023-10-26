@@ -1,9 +1,7 @@
 package testcomponent;
 
-import Selenuim.pages.*;
-
+import Selenium.pages.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +22,7 @@ import java.util.Properties;
 public class BaseTest {
 
      public  WebDriver driver;
-     public  LandingPage landingPage;
+     public LandingPage landingPage;
      Properties pro;
 
      public WebDriver initializeDriver() throws IOException {
@@ -68,6 +66,7 @@ public class BaseTest {
     public void tearDown(){
         driver.close();
     }
+
 
 
 //    public String getScreenshot(String testCaseName,WebDriver driver) throws IOException

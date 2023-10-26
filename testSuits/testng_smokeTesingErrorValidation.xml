@@ -14,13 +14,13 @@
 
   <test thread-count="5" name="Error Validations Test">
     <classes>
-      <class name="Selenuim.tests.ErroValidationTest"/>
+      <class name="Selenium.tests.ErrorValidationTest"/>
     </classes>
   </test> <!-- Test -->
 
   <test thread-count="5" name="Submit Order Test">
     <classes>
-      <class name="Selenuim.tests.SubmitOrderTest"/>
+      <class name="Selenium.tests.SubmitOrderTest"/>
     </classes>
   </test> <!-- Test -->
 

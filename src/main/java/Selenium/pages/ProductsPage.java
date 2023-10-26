@@ -1,4 +1,4 @@
-package Selenuim.pages;
+package Selenium.pages;
 
 import abstractioncomponent.AbstractionComponent;
 import org.openqa.selenium.By;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class ProductsPage extends AbstractionComponent {
-
 
   private WebDriver driver;
 
@@ -29,6 +28,8 @@ public class ProductsPage extends AbstractionComponent {
     }
 
 
+    private By viewProduct = By.cssSelector(".card-body button:first-of-type");
+
     public void addProductToCart(String productName) {
         for (int i = 0; i < getProductsList().size(); i++) {
             System.out.println(getProductsList().get(i).findElement(By.cssSelector("b")).getText());
@@ -42,6 +43,20 @@ public class ProductsPage extends AbstractionComponent {
         waitForElementToDisappear(animating);
 
     }
+
+
+    public void viewProductToCart(String productName) throws InterruptedException {
+        for (int i = 0; i < getProductsList().size(); i++) {
+            System.out.println(getProductsList().get(i).findElement(By.cssSelector("b")).getText());
+            if (getProductsList().get(i).findElement(By.cssSelector("b")).getText().contains(productName)) {
+                getProductsList().get(i).findElement(viewProduct).click();
+                break;
+            }
+        }
+
+        Thread.sleep(3000);
+    }
+
 
 
 

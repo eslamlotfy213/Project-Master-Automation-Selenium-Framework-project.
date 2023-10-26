@@ -1,4 +1,4 @@
-package Selenuim.pages;
+package Selenium.pages;
 
 import abstractioncomponent.AbstractionComponent;
 import org.openqa.selenium.By;

@@ -1,7 +1,6 @@
-package Selenuim.tests;
+package Selenium.tests;
 
-import Selenuim.pages.*;
-import Selenuim.pages.OrderPage;
+import Selenium.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -11,9 +10,8 @@ import java.io.IOException;
 
 public class SubmitOrderTest extends BaseTest {
 
-    @Test(dataProvider = "getData"
-            , groups = {"EndToEndTesting","Regression"})
-    public void submitOrder(String email, String password, String productName) throws IOException {
+    @Test(dataProvider = "getData", groups = {"EndToEndTesting","Regression"})
+    public void Check_submitOrder(String email, String password, String productName) throws IOException {
 
         ProductsPage productsPage = landingPage.LoginToApplication(email, password);
         productsPage.addProductToCart(productName);
@@ -27,14 +25,17 @@ public class SubmitOrderTest extends BaseTest {
         Assert.assertTrue(actualMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
     }
 
-    @Test(dependsOnMethods = {"submitOrder"})
-    public void orderHistoryTest() {
+    @Test(dependsOnMethods = {"Check_submitOrder"})
+    public void Check_orderHistoryTest() {
         String productName = "ZARA COAT 3";
         ProductsPage productsPage = landingPage.LoginToApplication("dexcomnew98@gmail.com", "User123#");
         OrderPage orderage = productsPage.goToOrderPage();
         Boolean ismatched = orderage.verifyOrderDisplay(productName);
         Assert.assertTrue(ismatched);
     }
+
+
+
 
     @DataProvider
     public Object[][] getData() {
@@ -44,4 +45,5 @@ public class SubmitOrderTest extends BaseTest {
                         {"postman2024@gmail.com", "User123#","IPHONE 13 PRO"}
                 };
     }
+
 }

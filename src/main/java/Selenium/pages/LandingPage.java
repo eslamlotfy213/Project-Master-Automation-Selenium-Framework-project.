@@ -1,5 +1,4 @@
-package Selenuim.pages;
-
+package Selenium.pages;
 import abstractioncomponent.AbstractionComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +17,6 @@ public class LandingPage extends AbstractionComponent {
      private By userEmail = By.id("userEmail");
      private By userPassword= By.id("userPassword");
      private By login = By.id("login");
-
      private By errorMessage = By.cssSelector("[class*='flyInOut']");
 
 

@@ -12,7 +12,9 @@ public class ExtentReporterNG {
 
             ExtentReports extent =new ExtentReports();
             extent.attachReporter(reporter);
-            extent.setSystemInfo("Tester", "QA");
+            extent.setSystemInfo("Tester", "SQA");
+            extent.setSystemInfo("Environment","Testing");
+            extent.setSystemInfo("Release","Current Sprint");
             return extent;
 
 

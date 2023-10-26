@@ -1,7 +1,7 @@
 package abstractioncomponent;
 
-import Selenuim.pages.CartPage;
-import Selenuim.pages.OrderPage;
+import Selenium.pages.CartPage;
+import Selenium.pages.OrderPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,11 +60,13 @@ public class AbstractionComponent {
 
 
     public CartPage goToCartPage(){
+         waitForElementToAppear(cartPageLink);
         driver.findElement(cartPageLink).click();
         return new CartPage(driver);
     }
 
     public OrderPage goToOrderPage(){
+         waitForElementToAppear(myOrderPageLink);
         driver.findElement(myOrderPageLink).click();
         return new OrderPage(driver);
     }
