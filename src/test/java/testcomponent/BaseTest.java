@@ -2,16 +2,17 @@ package testcomponent;
 
 import Selenium.pages.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,16 +24,18 @@ public class BaseTest {
 
      public  WebDriver driver;
      public LandingPage landingPage;
-     Properties pro;
+     public Properties pro;
 
      public WebDriver initializeDriver() throws IOException {
         //BrowserName=chrome
         pro = new Properties();
         FileInputStream fis = new FileInputStream("src/main/java/resources/Global.properties");
         pro.load(fis);
-        String browser= pro.getProperty("BrowserName");
-
-        if (browser.equalsIgnoreCase("chrome")) {
+        //check if browser !=null > true get data from mvn  and if browser ==null get data from file
+         String browser =  System.getProperty("BrowserName") !=null ? System.getProperty("BrowserName") : pro.getProperty("BrowserName");
+         // String browser= pro.getProperty("BrowserName");
+        if (browser.contains("chrome"))
+        {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
@@ -44,41 +47,42 @@ public class BaseTest {
         }else if (browser.equalsIgnoreCase("ie")){
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
+        } else if (browser.contains("headless")) {
+             ChromeOptions options = new ChromeOptions();
+             options.addArguments("--headless");
+             driver = new ChromeDriver(options);
+             driver.manage().window().setSize(new Dimension(1440,900));
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
+
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+         driver.manage().window().maximize();
 
         return driver;
     }
 
 
-
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod(alwaysRun=true)
     public LandingPage launchApplication() throws IOException
     {
         driver = initializeDriver();
-        landingPage = new LandingPage(driver);
-        driver.get(pro.getProperty("URL"));
-        return landingPage;
+        if (driver != null) {
+            landingPage = new LandingPage(driver);
+            driver.get(pro.getProperty("URL"));
+            return landingPage;
+        }
+        // Handle the case when driver initialization fails
+        return null;
     }
+
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(){
-        driver.close();
+
+        if (driver != null) {
+            driver.close();
+        }
     }
 
-
-
-//    public String getScreenshot(String testCaseName,WebDriver driver) throws IOException
-//    {
-//        TakesScreenshot ts = (TakesScreenshot)driver;
-//        File source = ts.getScreenshotAs(OutputType.FILE);
-//        File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
-//        FileUtils.copyFile(source, file);
-//        return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
-//
-//
-//    }
 
     public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
         String screenshotPath = null;

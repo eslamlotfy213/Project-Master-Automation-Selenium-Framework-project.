@@ -180,6 +180,188 @@ tests > driver >landing page (childmethods) >  super > extent > (parentmethods)
 
 	thread count = 1
     one method in this class at time is allowed to run parallelly  	
+---------------------------------CMD run project in mvn -----------------------------------------------------------------------------------------------
+maven testng integration 
+install maven-surefire-plugin
+add 
+<profile>
+<id="">   
+ <build>
+ 
+ </build>
+</profile>
+mvn test -P (elly id="")
+
+<profiles>
+        <profile>
+            <id>ErrorValidation</id>
+            <build>
+                <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-plugin</artifactId>
+                            <version>3.0.0-M6</version>
+                            <configuration>
+                                <suiteXmlFiles>
+                                    <suiteXmlFile>testSuites/testng_smokeTesingErrorValidation.xml</suiteXmlFile>
+                                </suiteXmlFiles>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M6</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>testSuites/testng_parallel.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
+----------------------------run CMD from maven browser-----------------------------------------------------------------------------------
+-D >>>>> maven parameter
+mvn test -Dbrowser=firefox
+
+//check if browser !=null > true get data from mvn  and if browser ==null get data from file
+String browser =  System.getProperty("BrowserName") !=null ? System.getProperty("BrowserName") : pro.getProperty("BrowserName");
+// String browser= pro.getProperty("BrowserName");
+----------------commands on cmd--------------------------------------------------------------------------------------------------
+mvn test -PErrorValidation -DBrowserName=edge
+-------------------jenkins--------------------------------------------------------------------------
+1.java -jar jenkins .war =httpPort=9000
+2.General > advanced > cutome workspace 
+          > D:\Selenium4\Selenuim_Framework_Design
+3.Directory > add project path 
+4.build     > add build step 
+            > invoke Top level Maven targets
+5.add commands :test -PErrorValidation -DBrowserName=firefox  
+\.jenkins\$(JENKINS_HOME)
+------------------jenkins prarmeter--------------------------------------
+This project is parameterized 
+add parameter
+Choice Paramter
+ Name: BrowserName
+ Choices chrome - firefox - edge - ie 
+
+5.add commands :test -PErrorValidation -DBrowserName="$BrowserName" 
+---------------------------headlees mode---------------------------------
+mvn test -PErrorValidation -DBrowserName=headless
+------------------------jenkins build trigger-----------------------------
+Build periodically
+ Schedule 45 7 24 ***
+1. 45 dh minites 
+2. 7 dh hours 
+3. 24 dh days 
+4.   dh months
+5.   dh Week
+   Schedule H 6 * * *
+   was last build saturday Aug 6 2022 6:24:55 will next build next sunday Aug 7 2022 6:24:55
+----------Questions------------------------------------------------------------------------------------------------------------------------------------
+1.POM design patter
+2.encapsulation > loctores private - methods public
+3.interface > listerces
+4.parallelly > testNG parallel="tests"
+<test>
+  <classes>
+     <class name"test"/>
+  </classes>
+</test>
+5.ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); Thread safa
+# extentTest.set(test)
+# extentTest.get()
+6.using static testing ? avoid using when making parallel as need maintain concurrent driver
+use it for readly mode
+
+7.how use global varaible ?
+8. use group to set one test to perform
+9. IRetryAnalyzer flakytest ?
+10. take screenshot ? using testng listener 
+----------------------------------------this---------------------------------------------
+this.a = a;   // this refere to current class variable
+------------------------------------super-------------------------------------------------------------
+invokde parent class constractor
+lazem inhertance
+super();
+Example:
+1.
+PS2 ps2 = new PS2(3); //runnner
+ps2.multiplythree();
+
+
+2.public class PS2 extends PS3
+int a ;
+PS2(int a)
+{
+  super(a); //invokde parent class constractor
+  this.a = a;
+}
+
+3.public class PS3
+int a;
+PS3(int a)
+{
+ this.a = a;
+}
+
+public int multiplythree()
+{
+a= a+3;
+return a;
+}
+
+
+@Test
+   public void Run() {
+       P1 p1 = new P1(3);
+       System.out.println(p1.increment());
+       System.out.println(p1.decrement());
+
+       Todo();
+
+      // Multiply m = new Multiply(3); no need to create obj we make super to send value from child to parent
+       System.out.println(p1.multiplthree());
+
+   }
+
+-------------------------------selenuim grid--------------------------------------------------------------------------------------
+local 
+-hub 
+-node
+     /*
+    hub: java -jar selenium-server-4.15.0.jar  hub
+    hub: java -jar selenium-server-4.15.0.jar node
+    node: java -jar selenium-server-4.15.0.jar node --detect-drivers true
+     */
+
+
+another machince
+-hub same hub
+-Xpub ---->publish events
+-Xsub ----->subscribe events
+
+java -jar <SeleniumJarname> node --detect-drivers true --publish-events tcp://192.168.1.139:4442 --subscribe-events tcp://192.168.1.139:4443
+
+Example :  XPUB binding to [binding to tcp://*:4442, advertising as tcp://192.168.1.3:4442]
+,XSUB binding to [binding to tcp://*:4443, advertising as tcp://192.168.1.3:4443]
+
+-------------------------------devchrometools----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create maven project
+dependency java
+chromium Driver class
+chrome driver and edge driver are inherited from chromium driver
 
 
 
@@ -193,23 +375,3 @@ tests > driver >landing page (childmethods) >  super > extent > (parentmethods)
 
 
 
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-	

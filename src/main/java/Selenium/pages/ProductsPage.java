@@ -22,6 +22,7 @@ public class ProductsPage extends AbstractionComponent {
     private  By toastMessage = By.cssSelector("#toast-container");
     private  By  animating = By.cssSelector(".ng-animating");
 
+
     public List<WebElement> getProductsList() {
         waitForElementToAppear(productBy);
         return driver.findElements(products);
@@ -29,6 +30,7 @@ public class ProductsPage extends AbstractionComponent {
 
 
     private By viewProduct = By.cssSelector(".card-body button:first-of-type");
+
 
     public void addProductToCart(String productName) {
         for (int i = 0; i < getProductsList().size(); i++) {
@@ -45,16 +47,17 @@ public class ProductsPage extends AbstractionComponent {
     }
 
 
+
     public void viewProductToCart(String productName) throws InterruptedException {
-        for (int i = 0; i < getProductsList().size(); i++) {
-            System.out.println(getProductsList().get(i).findElement(By.cssSelector("b")).getText());
-            if (getProductsList().get(i).findElement(By.cssSelector("b")).getText().contains(productName)) {
+        for (int i = 0; i < getProductsList().size(); i++)
+        {
+            if (getProductsList().get(i).findElement(By.cssSelector("b")).getText().contains(productName))
+            {
                 getProductsList().get(i).findElement(viewProduct).click();
                 break;
             }
         }
 
-        Thread.sleep(3000);
     }
 
 

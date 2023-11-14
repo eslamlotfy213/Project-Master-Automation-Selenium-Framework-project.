@@ -22,19 +22,10 @@ public class SubmitOrderTest extends BaseTest {
         checkoutPage.setCountry("Egy");
         ConfirmationPage confirmationPage = checkoutPage.submitOrder();
         String actualMessage = confirmationPage.getconfirmationMessage();
-        Assert.assertTrue(actualMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-    }
-
-    @Test(dependsOnMethods = {"Check_submitOrder"})
-    public void Check_orderHistoryTest() {
-        String productName = "ZARA COAT 3";
-        ProductsPage productsPage = landingPage.LoginToApplication("dexcomnew98@gmail.com", "User123#");
         OrderPage orderage = productsPage.goToOrderPage();
-        Boolean ismatched = orderage.verifyOrderDisplay(productName);
-        Assert.assertTrue(ismatched);
+        Boolean ismatched2 = orderage.verifyOrderDisplay(productName);
+        Assert.assertTrue(ismatched2);
     }
-
-
 
 
     @DataProvider

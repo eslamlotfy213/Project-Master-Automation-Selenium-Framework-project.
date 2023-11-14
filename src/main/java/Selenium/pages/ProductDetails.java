@@ -16,13 +16,13 @@ public class ProductDetails extends AbstractionComponent {
     }
 
 
-    private By productTitle =By.cssSelector("div h2");
+    private By productTitle =By.tagName("img");
 
     private By addToCartbutton = By.cssSelector("button[class*='primary']");
 
 
 
-    public String getProductTitle(){
+    public String getProductTitle() throws InterruptedException {
         waitForElementToAppear(productTitle);
         return driver.findElement(productTitle).getText();
     }

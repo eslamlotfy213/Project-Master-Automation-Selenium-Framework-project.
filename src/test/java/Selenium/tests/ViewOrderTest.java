@@ -12,24 +12,12 @@ import java.io.IOException;
 public class ViewOrderTest extends BaseTest {
 
     @Test(dataProvider = "getData")
-    public void Check_viewOrder(String email, String password, String productName) throws IOException, InterruptedException {
+    public void Check_viewOrder(String email, String password, String productName) throws InterruptedException {
         ProductsPage productsPage = landingPage.LoginToApplication(email, password);
         productsPage.viewProductToCart(productName);
         ProductDetails ProductDetails = new ProductDetails(driver);
-        String title= ProductDetails.getProductTitle();
-        Assert.assertEquals(title,productName);
+        Assert.assertEquals(ProductDetails.getProductTitle(),productName);
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

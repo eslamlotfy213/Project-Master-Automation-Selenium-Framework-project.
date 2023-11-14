@@ -30,6 +30,7 @@ public class AbstractionComponent {
 
      public AbstractionComponent(WebDriver driver)
      {
+
          this.driver = driver;
      }
 
@@ -60,18 +61,16 @@ public class AbstractionComponent {
 
 
     public CartPage goToCartPage(){
-         waitForElementToAppear(cartPageLink);
+        waitForElementToAppear(cartPageLink);
         driver.findElement(cartPageLink).click();
         return new CartPage(driver);
     }
 
     public OrderPage goToOrderPage(){
-         waitForElementToAppear(myOrderPageLink);
+        waitForElementToAppear(myOrderPageLink);
         driver.findElement(myOrderPageLink).click();
         return new OrderPage(driver);
     }
-
-
 
 
 
