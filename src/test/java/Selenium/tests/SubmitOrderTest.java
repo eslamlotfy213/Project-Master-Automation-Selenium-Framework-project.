@@ -15,6 +15,7 @@ public class SubmitOrderTest extends BaseTest {
 
         ProductsPage productsPage = landingPage.LoginToApplication(email, password);
         productsPage.addProductToCart(productName);
+
         CartPage cartPage = productsPage.goToCartPage();
         Boolean ismatched = cartPage.verifyProductDisplay(productName);
         Assert.assertTrue(ismatched);

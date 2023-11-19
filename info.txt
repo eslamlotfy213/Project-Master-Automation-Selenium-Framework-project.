@@ -335,6 +335,95 @@ return a;
        System.out.println(p1.multiplthree());
 
    }
+-------------------cucumber Testng---------------------------------------------------
+BDD  >business readable domain specific language
+
+Scenarios > cucumber testcases are represented as scenarios
+Steps >  test steps give ,  when ,  then 
+feature > testsuits
+
+add dependency > cucumber-java
+add dependency > cucumber-Testng
+
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.14.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>7.14.0</version>
+</dependency>
+
+    @CucumberOptions(
+            features="src/test/java/features",
+            monochrome=true,
+            plugin = { "html:target/cucumbrt.html"},
+            glue= {"stepDefinations"}
+    )
+    public class TestRunner extends AbstractestNGCucmbrtTests{
+
+    }
+
+TestNging has datadriver
+cucumber with examples
+background usging to start the prerquiests ? lanuching driver
+
+**********************************************************************************************************************
+cucumber TestNG > use AbstractestNGCucmbrtTests
+cucumber Junit > use  @RunWith(Cucumber.class)
+*********************************************************************************************************************
+
+<productName>                               ------>  (.+)
+el function/methods regulare expression     ------>  (^    $)  
+"Thanks for confirmation" this message      ------>  {string}
+tidy gerkin plugin
+
+@cucmberoptions features, glue, plugin
+testrunner -------> extends abstractiontestng{
+
+}
+
+-------------------------cucumber Junit-----------------------------------------------------------------------
+     <!-- https://mvnrepository.com/artifact/junit/junit -->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.13.2</version>
+          <scope>test</scope>
+      </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.14.0</version>
+    </dependency>
+
+      <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+      <dependency>
+          <groupId>io.cucumber</groupId>
+          <artifactId>cucumber-junit</artifactId>
+          <version>7.14.0</version>
+          <scope>test</scope>
+      </dependency>
+
+    @RunWith(Cucumber.class)
+    @CucumberOptions(
+            features="src/test/java/features",
+            plugin = { "pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
+            , glue= {"stepDefinations"}
+    )
+    public class TestRunner {
+    //tags= {"@DeletePlace"}  compile test verify
+    }
+-----------------------------------cucumber how it works+++++++++++++++++++++++++++++++++++
+write "<name>"  rather than <name>
+open target
 
 -------------------------------selenuim grid--------------------------------------------------------------------------------------
 local 
@@ -362,7 +451,6 @@ create maven project
 dependency java
 chromium Driver class
 chrome driver and edge driver are inherited from chromium driver
-
 
 
 
