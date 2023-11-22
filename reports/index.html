@@ -11,7 +11,7 @@
 <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
-<style type="text/css"></style></head><body class="spa -report standard">
+<style type="text/css"></style></head><body class="spa -report dark">
   <div class="app">
     <div class="layout">
 <div class="header navbar">
@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Web Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 13, 2023 06:18:03 PM</span></a>
+<a href="#"><span class="badge badge-primary">Nov 22, 2023 05:42:18 PM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,6 +72,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -79,9 +85,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Check_loginValidationWrongEmail</p>
+            <p class="name">Check_SP1_Login_VerifyLogin</p>
             <p class="text-sm">
-              <span>6:18:13 PM</span> / <span>00:00:01:074</span>
+              <span>5:42:26 PM</span> / <span>00:00:01:309</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -89,10 +95,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Check_loginValidationWrongEmail</h5>
-<span class='badge badge-success'>11.13.2023 6:18:13 PM</span>
-<span class='badge badge-danger'>11.13.2023 6:18:14 PM</span>
-<span class='badge badge-default'>00:00:01:074</span>
+<h5 class="test-status text-pass">Check_SP1_Login_VerifyLogin</h5>
+<span class='badge badge-success'>11.22.2023 5:42:26 PM</span>
+<span class='badge badge-danger'>11.22.2023 5:42:27 PM</span>
+<span class='badge badge-default'>00:00:01:309</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -104,7 +110,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:18:14 PM</td>
+        <td>5:42:27 PM</td>
         <td>
           Test Passed
         </td>
@@ -119,9 +125,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Check_loginValidationWrongPassword</p>
+            <p class="name">Check_SP1_Login_VerifyLogin</p>
             <p class="text-sm">
-              <span>6:18:21 PM</span> / <span>00:00:00:802</span>
+              <span>5:42:32 PM</span> / <span>00:00:01:006</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -129,10 +135,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Check_loginValidationWrongPassword</h5>
-<span class='badge badge-success'>11.13.2023 6:18:21 PM</span>
-<span class='badge badge-danger'>11.13.2023 6:18:22 PM</span>
-<span class='badge badge-default'>00:00:00:802</span>
+<h5 class="test-status text-pass">Check_SP1_Login_VerifyLogin</h5>
+<span class='badge badge-success'>11.22.2023 5:42:32 PM</span>
+<span class='badge badge-danger'>11.22.2023 5:42:33 PM</span>
+<span class='badge badge-default'>00:00:01:006</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -144,9 +150,82 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:18:22 PM</td>
+        <td>5:42:33 PM</td>
         <td>
           Test Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Check_SP1_Login_VerifyLogin</p>
+            <p class="text-sm">
+              <span>5:42:38 PM</span> / <span>00:00:01:434</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Check_SP1_Login_VerifyLogin</h5>
+<span class='badge badge-success'>11.22.2023 5:42:38 PM</span>
+<span class='badge badge-danger'>11.22.2023 5:42:39 PM</span>
+<span class='badge badge-default'>00:00:01:434</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='.\\Check_SP1_Login_VerifyLogin.png' src=".\\Check_SP1_Login_VerifyLogin.png">
+    <div class="title">Check_SP1_Login_VerifyLogin</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:42:39 PM</td>
+        <td>
+          <textarea readonly class="code-block">java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at Selenium.tests.SP1_Login_VerifyLogin.Check_SP1_Login_VerifyLogin(SP1_Login_VerifyLogin.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -163,18 +242,67 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:42:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>Check_SP1_Login_VerifyLogin</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 13, 2023 06:18:03 PM</h3>
+<h3>Nov 22, 2023 05:42:18 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 13, 2023 06:18:22 PM</h3>
+<h3>Nov 22, 2023 05:42:39 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -186,7 +314,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -202,12 +330,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
+<div><small data-tooltip='66%'>
 <b>2</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='33%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -225,9 +353,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>2</b> events passed</small></div>
+<div><small data-tooltip='66%'><b>2</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
+<small data-tooltip='33%'><b>1</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -244,7 +372,7 @@
 </div></div>
 <script>
 var timeline = {
-"Check_loginValidationWrongEmail":1.074,"Check_loginValidationWrongPassword":0.802
+"Check_SP1_Login_VerifyLogin":1.309,"Check_SP1_Login_VerifyLogin":1.006,"Check_SP1_Login_VerifyLogin":1.434
 };
 </script>
 <div class="row">
@@ -276,7 +404,7 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 2,
-failParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -293,7 +421,7 @@ skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 passEvents: 2,
-failEvents: 0,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0

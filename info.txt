@@ -4,10 +4,15 @@ class methods only
 interface methods
 Webdriver driver = new chromedriver();
 
-driver.close();  
-close only tab
-driver.quit();
-close all assoiscated windows
+driver.close();   close only tab
+driver.quit(); close all assoiscated windows
+
+driver.switchTo().frame() || driver.switchTo().window() || driver.switchTo().alert()
+driver.navigate().forward();
+SelectAllOptions() is not a valid command In webdriver.
+deselectAll() is a valid command is a valid command in Select 
+Selenium IDE is available as Firefox Addons.
+
 -------------------------console----------------------------------------
 <p  class='error'    >
 $('p.error)	
@@ -423,8 +428,7 @@ testrunner -------> extends abstractiontestng{
     }
 -----------------------------------cucumber how it works+++++++++++++++++++++++++++++++++++
 write "<name>"  rather than <name>
-open target
-
+open target folder to get the report
 -------------------------------selenuim grid--------------------------------------------------------------------------------------
 local 
 -hub 
@@ -453,13 +457,54 @@ chromium Driver class
 chrome driver and edge driver are inherited from chromium driver
 
 
+--------------------------------Selenuim Database----------------------------------------------------------------
+download mysql
+http://dev.mysql.com/downloads/
+
+EG-1BTJRG3
+STA\Eslam.Lotfy
+
+1.install mysql server 
+2.create database in mysql server
+create database Qadbt;
+BD Qadbt
+username root
+password Azaz123#
+insert into Table value()
+create maven project 
+create class
+add dependency
 
 
+use-------------mysql-connector--------------------------------
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>8.0.33</version>
+			</dependency>
+			
+        Connection con = DriverManager.getConnection("jdbc:mysql://"+ localhost +":"+3306+"/Qadbt",username,password);
+use-------------sqlserver-connector--------------------------------
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>9.4.0.jre11</version>
+        </dependency>
+        Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Qadbt;user=root;password=Azaz123#;");
 
-
-
-
-
+-------------------------------------crosee browser ---------------------------------------------------------------
+create maven project
+add testN and selenuim java
+create account on browser stack
+open .https://automate.browserstack.com/dashboard/v2/quick-start/get-started
+open https://github.com/browserstack/testng-browserstack
+add dependency to read yml file
+<dependency>
+    <groupId>com.browserstack</groupId>
+    <artifactId>browserstack-java-sdk</artifactId>
+    <version>LATEST</version>
+    <scope>compile</scope>
+</dependency>
 
 
 

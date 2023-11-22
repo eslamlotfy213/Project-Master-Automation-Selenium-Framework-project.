@@ -14,13 +14,13 @@
     <listener class-name="testcomponent.Listeners"/>
   </listeners>
 
-  <test thread-count="5" name="Error Validations Test">
+  <test  name="Error Validations Test">
     <classes>
       <class name="Selenium.tests.ErrorValidationTest"/>
     </classes>
   </test> <!-- Test -->
 
-  <test thread-count="5" name="Submit Order Test">
+  <test  name="Submit Order Test">
     <classes>
       <class name="Selenium.tests.SubmitOrderTest"/>
     </classes>
