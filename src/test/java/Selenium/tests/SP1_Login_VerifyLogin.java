@@ -21,20 +21,22 @@ public class SP1_Login_VerifyLogin extends BaseTest {
 
         landingPage.LoginToApplication(username, password);
         String errorMessage = landingPage.getErrorMessage();
+        System.out.println(errorMessage);
         Assert.assertEquals(message,errorMessage);
-
     }
 
 
 
     @DataProvider
-    public Object[][] getData() throws IOException {
-
-        //his method get data from excel sheet
-        //pass data to dataprovider
+    public Object[][] getData() {
         GetDataFromExcelintoDatadriver getDataFromExcelintoDatadriver = new GetDataFromExcelintoDatadriver();
-        return  getDataFromExcelintoDatadriver.getData("TestData2","src/main/java/resources/Data.xlsx");
-
+        try {
+            return getDataFromExcelintoDatadriver.getData("TestData2", "src/main/java/resources/Data.xlsx");
+        } catch (IOException e) {
+            // Handle the exception (log, throw a custom exception, etc.)
+            e.printStackTrace();
+            return null; // or throw a custom exception
+        }
     }
 
 
