@@ -11,7 +11,7 @@ import java.io.IOException;
 public class SubmitOrderTest extends BaseTest {
 
     @Test(dataProvider = "getData", groups = {"EndToEndTesting","Regression"})
-    public void Check_submitOrder(String email, String password, String productName) throws IOException {
+    public void Check_submitOrder(String email, String password, String productName) {
 
         ProductsPage productsPage = landingPage.LoginToApplication(email, password);
         productsPage.addProductToCart(productName);

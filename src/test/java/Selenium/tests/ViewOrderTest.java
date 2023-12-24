@@ -7,12 +7,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import testcomponent.BaseTest;
 
-import java.io.IOException;
 
 public class ViewOrderTest extends BaseTest {
 
     @Test(dataProvider = "getData")
-    public void Check_viewOrder(String email, String password, String productName) throws InterruptedException {
+    public void Check_viewOrder(String email, String password, String productName) {
         ProductsPage productsPage = landingPage.LoginToApplication(email, password);
         productsPage.viewProductToCart(productName);
         ProductDetails ProductDetails = new ProductDetails(driver);

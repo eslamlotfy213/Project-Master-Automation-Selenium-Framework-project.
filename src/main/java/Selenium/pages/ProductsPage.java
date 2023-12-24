@@ -48,7 +48,7 @@ public class ProductsPage extends AbstractionComponent {
 
 
 
-    public void viewProductToCart(String productName) throws InterruptedException {
+    public void viewProductToCart(String productName) {
         for (int i = 0; i < getProductsList().size(); i++)
         {
             if (getProductsList().get(i).findElement(By.cssSelector("b")).getText().contains(productName))

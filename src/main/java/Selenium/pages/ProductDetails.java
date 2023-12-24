@@ -22,7 +22,7 @@ public class ProductDetails extends AbstractionComponent {
 
 
 
-    public String getProductTitle() throws InterruptedException {
+    public String getProductTitle()  {
         waitForElementToAppear(productTitle);
         return driver.findElement(productTitle).getText();
     }

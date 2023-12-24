@@ -19,13 +19,19 @@ public class dataDriven {
     //once coloumn is identified then scan entire testcase coloum to identify purcjhase testcase row
     //after you grab purchase testcase row = pull all the data of that row and feed into test
 
-    public ArrayList<String> getData(String testcaseName,String headertestCases ,String sheetName, String pathFile) throws IOException
+    XSSFWorkbook workbook;
+    FileInputStream fis;
+    public ArrayList<String> getData(String testcaseName,String headertestCases ,String sheetName, String pathFile)
     {
         //fileInputStream argument
         ArrayList<String> a=new ArrayList<String>();
-
-        FileInputStream fis=new FileInputStream(pathFile);
-        XSSFWorkbook workbook=new XSSFWorkbook(fis);
+        try {
+            fis = new FileInputStream(pathFile);
+            workbook = new XSSFWorkbook(fis);
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null; // or throw a custom exception
+        }
 
         int sheets=workbook.getNumberOfSheets();
         for(int i=0;i<sheets;i++)

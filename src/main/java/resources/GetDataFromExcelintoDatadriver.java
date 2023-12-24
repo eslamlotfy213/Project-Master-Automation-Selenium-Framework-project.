@@ -7,17 +7,23 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class GetDataFromExcelintoDatadriver {
 
 
     DataFormatter formatter = new DataFormatter();
+    FileInputStream fis;
+    XSSFWorkbook workbook;
+    public Object[][] getData(String sheetName, String pathFile)  {
+        try {
+            fis = new FileInputStream(pathFile);
+            workbook = new XSSFWorkbook(fis);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-    public Object[][] getData(String sheetName, String pathFile) throws IOException {
-
-        FileInputStream fis = new FileInputStream(pathFile);
-        XSSFWorkbook workbook=new XSSFWorkbook(fis);
         XSSFSheet sheet=workbook.getSheet(sheetName);
         int rowCount = sheet.getPhysicalNumberOfRows();
         XSSFRow row = sheet.getRow(0);

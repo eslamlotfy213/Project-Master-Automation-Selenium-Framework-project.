@@ -26,43 +26,52 @@ public class BaseTest {
      public LandingPage landingPage;
      public Properties pro;
 
-     public WebDriver initializeDriver() throws IOException {
+     public WebDriver initializeDriver() {
         //BrowserName=chrome
-        pro = new Properties();
-        FileInputStream fis = new FileInputStream("src/main/java/resources/Global.properties");
-        pro.load(fis);
-        //check if browser !=null > true get data from mvn  and if browser ==null get data from file
-         String browser =  System.getProperty("BrowserName") !=null ? System.getProperty("BrowserName") : pro.getProperty("BrowserName");
-         // String browser= pro.getProperty("BrowserName");
-        if (browser.contains("chrome"))
-        {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }else if (browser.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-        }else if (browser.equalsIgnoreCase("ie")){
-            WebDriverManager.iedriver().setup();
-            driver = new InternetExplorerDriver();
-        } else if (browser.contains("headless")) {
-             ChromeOptions options = new ChromeOptions();
-             options.addArguments("--headless");
-             driver = new ChromeDriver(options);
-             driver.manage().window().setSize(new Dimension(1440,900));
-        }
+         try {
+             pro = new Properties();
+             FileInputStream fis = new FileInputStream("src/main/java/resources/Global.properties");
+             pro.load(fis);
+             //check if browser !=null > true get data from mvn  and if browser ==null get data from file
+             String browser =  System.getProperty("BrowserName") !=null ? System.getProperty("BrowserName") : pro.getProperty("BrowserName");
+             // String browser= pro.getProperty("BrowserName");
+             if (browser.contains("chrome"))
+             {
+                 WebDriverManager.chromedriver().setup();
+                 driver = new ChromeDriver();
+             } else if (browser.equalsIgnoreCase("firefox")) {
+                 WebDriverManager.firefoxdriver().setup();
+                 driver = new FirefoxDriver();
+             }else if (browser.equalsIgnoreCase("edge")) {
+                 WebDriverManager.edgedriver().setup();
+                 driver = new EdgeDriver();
+             }else if (browser.equalsIgnoreCase("ie")){
+                 WebDriverManager.iedriver().setup();
+                 driver = new InternetExplorerDriver();
+             } else if (browser.contains("headless")) {
+                 ChromeOptions options = new ChromeOptions();
+                 options.addArguments("--headless");
+                 driver = new ChromeDriver(options);
+                 driver.manage().window().setSize(new Dimension(1440,900));
+             }
 
-         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-         driver.manage().window().maximize();
+             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+             driver.manage().window().maximize();
 
-        return driver;
-    }
+             return driver;
+
+
+         } catch (IOException e) {
+
+             e.printStackTrace();
+             return null;
+         }
+     }
+
 
 
     @BeforeMethod(alwaysRun=true)
-    public LandingPage launchApplication() throws IOException
+    public LandingPage launchApplication()
     {
         driver = initializeDriver();
         if (driver != null) {
@@ -84,7 +93,7 @@ public class BaseTest {
     }
 
 
-    public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+    public String getScreenshot(String testCaseName, WebDriver driver){
         String screenshotPath = null;
 
         try {
@@ -103,7 +112,7 @@ public class BaseTest {
 
             screenshotPath = ".\\" + relativePath[1];
 
-        } catch (Exception e) {
+        } catch (IOException e) {
 
             System.out.println("Failure to take screenshot " + e);
 

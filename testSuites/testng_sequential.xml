@@ -20,6 +20,11 @@
     </classes>
   </test>
 
+  <test  name="View Order Test">
+    <classes>
+      <class name="Selenium.tests.ViewOrderTest"/>
+    </classes>
+  </test> <!-- Test -->
 
 </suite> <!-- Suite -->
 
