@@ -1,5 +1,6 @@
 package testcomponent;
 
+
 import Selenium.pages.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
@@ -37,16 +38,12 @@ public class BaseTest {
              // String browser= pro.getProperty("BrowserName");
              if (browser.contains("chrome"))
              {
-                 WebDriverManager.chromedriver().setup();
                  driver = new ChromeDriver();
              } else if (browser.equalsIgnoreCase("firefox")) {
-                 WebDriverManager.firefoxdriver().setup();
                  driver = new FirefoxDriver();
              }else if (browser.equalsIgnoreCase("edge")) {
-                 WebDriverManager.edgedriver().setup();
                  driver = new EdgeDriver();
              }else if (browser.equalsIgnoreCase("ie")){
-                 WebDriverManager.iedriver().setup();
                  driver = new InternetExplorerDriver();
              } else if (browser.contains("headless")) {
                  ChromeOptions options = new ChromeOptions();

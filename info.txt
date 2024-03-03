@@ -237,6 +237,10 @@ mvn test -P (elly id="")
     </build>
 </project>
 ----------------------------run CMD from maven browser-----------------------------------------------------------------------------------
+to run single separate test case
+mvn -Dtest-SubmitOrderTest test
+
+
 -D >>>>> maven parameter
 mvn test -Dbrowser=firefox
 
@@ -247,7 +251,7 @@ String browser =  System.getProperty("BrowserName") !=null ? System.getProperty(
 mvn test -PErrorValidation -DBrowserName=edge
 -------------------jenkins--------------------------------------------------------------------------
 1.java -jar jenkins .war =httpPort=9000
-2.General > advanced > cutome workspace 
+2.General > advanced > cutome workspace
           > D:\Selenium4\Selenuim_Framework_Design
 3.Directory > add project path 
 4.build     > add build step 
@@ -261,12 +265,13 @@ Choice Paramter
  Name: BrowserName
  Choices chrome - firefox - edge - ie 
 
-5.add commands :test -PErrorValidation -DBrowserName="$BrowserName" 
+5.add commands :test -PErrorValidation -DBrowserName="$BrowserName"
+test -PErrorValidation -DBrowserName="$browserName"
 ---------------------------headlees mode---------------------------------
 mvn test -PErrorValidation -DBrowserName=headless
 ------------------------jenkins build trigger-----------------------------
 Build periodically
- Schedule 45 7 24 ***
+ Schedule 45 7 24 * * *
 1. 45 dh minites 
 2. 7 dh hours 
 3. 24 dh days 
@@ -274,6 +279,8 @@ Build periodically
 5.   dh Week
    Schedule H 6 * * *
    was last build saturday Aug 6 2022 6:24:55 will next build next sunday Aug 7 2022 6:24:55
+   */5 * * * *
+   to run every 5 mins
 ----------Questions------------------------------------------------------------------------------------------------------------------------------------
 1.POM design patter
 2.encapsulation > loctores private - methods public
@@ -507,4 +514,31 @@ add dependency to read yml file
 </dependency>
 
 
+-------------------------interview ------------------------------------------------------
+Certainly! To test a GET API request that returns the last 3 calls made by your number, you can create various test cases to ensure the functionality works as expected. Here are five test cases:
 
+Valid Request - Successful Response:
+
+Request: GET /api/calls?number=YOUR_NUMBER&limit=3
+Expected Response: 200 OK
+The response should include the details of the last 3 calls made by YOUR_NUMBER.
+No Calls Made Yet:
+
+Request: GET /api/calls?number=YOUR_NUMBER&limit=3
+Expected Response: 200 OK (Empty List)
+If no calls have been made from YOUR_NUMBER, the response should indicate an empty list.
+Invalid Number Parameter:
+
+Request: GET /api/calls?number=INVALID_NUMBER&limit=3
+Expected Response: 400 Bad Request
+If the number parameter is not valid, the API should return a 400 Bad Request response.
+Insufficient Limit:
+
+Request: GET /api/calls?number=YOUR_NUMBER&limit=1
+Expected Response: 200 OK
+Ensure that the API respects the limit parameter and returns only the requested number of calls.
+Exceeding Limit:
+
+Request: GET /api/calls?number=YOUR_NUMBER&limit=10
+Expected Response: 200 OK (Up to 3 calls)
+Verify that the API handles cases where the limit parameter exceeds the actual number of calls made by YOUR_NUMBER, returning all available calls up to the limit.

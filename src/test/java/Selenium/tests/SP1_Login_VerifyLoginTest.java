@@ -7,16 +7,20 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import resources.GetDataFromExcelintoDatadriver;
 import testcomponent.BaseTest;
+import testcomponent.Retry;
 
 
-import java.io.IOException;
+public class SP1_Login_VerifyLoginTest extends BaseTest {
 
 
-public class SP1_Login_VerifyLogin extends BaseTest {
+
+    // 1.test it before retryAnalyzer = Retry.class
+    // 2.test it after retryAnalyzer = Retry.class
+
 
     DataFormatter formatter = new DataFormatter();
 
-    @Test(dataProvider = "getData")
+    @Test(dataProvider = "getData",retryAnalyzer = Retry.class)
     public void Check_SP1_Login_VerifyLogin(String username, String password , String message) {
 
         landingPage.LoginToApplication(username, password);
@@ -24,6 +28,23 @@ public class SP1_Login_VerifyLogin extends BaseTest {
         System.out.println(errorMessage);
         Assert.assertEquals(message,errorMessage);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

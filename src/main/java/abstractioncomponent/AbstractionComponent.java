@@ -30,7 +30,6 @@ public class AbstractionComponent {
 
      public AbstractionComponent(WebDriver driver)
      {
-
          this.driver = driver;
      }
 
