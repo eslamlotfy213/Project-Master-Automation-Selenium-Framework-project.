@@ -1,13 +1,19 @@
 package cucumber.stepDefinition;
 
 import Selenium.pages.*;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import testcomponent.BaseTest;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -56,16 +62,24 @@ public class StepDefinition extends BaseTest {
 
         String actualMessage = confirmationPage.getconfirmationMessage();
         Assert.assertTrue(actualMessage.equalsIgnoreCase(string));
-        driver.close();
+
     }
 
     @Then("^\"([^\"]*)\" message is displayed$")
     public void something_message_is_displayed(String strArg1) throws Throwable {
 
         Assert.assertEquals(strArg1, landingPage.getErrorMessage());
-        driver.close();
+
     }
 
+    @After
+    public void tearDown(Scenario scenario){
+        if (scenario.isFailed()) {
+            byte[] screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            Allure.addAttachment("Failed Screenshot ....",new ByteArrayInputStream(screenshot));
+        }
+        driver.close();
+    }
 
 
 }

@@ -542,3 +542,67 @@ Exceeding Limit:
 Request: GET /api/calls?number=YOUR_NUMBER&limit=10
 Expected Response: 200 OK (Up to 3 calls)
 Verify that the API handles cases where the limit parameter exceeds the actual number of calls made by YOUR_NUMBER, returning all available calls up to the limit.
+
+
+----------------------------------------allure report-----------------------------------------------------------
+To run allure report
+•	Open folder directory where [allure-results]
+•	Run cmd and enter : allure serve allure-results
+----------------------------------------Jenkins  pipline ci cd ----------------------------------------------------------------
+open jenkins
+create freestyle
+kind secret test
+scope : global , jenkines , nodes , items , child itesm
+secret ? create a new token from developers settings
+
+from githup website
+go setting
+webhooks
+
+go jenkins
+manage jenkins
+system
+scroll down to githup section
+click on checkbox ? specify another hook URL
+link https//localhost/githup-webhook
+add the link  on the webhooks on githup
+
+
+
+
+
+
+1.downlaod jenkins from https://www.jenkins.io/download/ Stable (LTS)
+2.Go to folder of jenkins
+2.open CMD and wrire java jar (file of jenkins)  ex : java -jar jenkins.war -httpPort=8080 --enable-future-java
+3.password : deab25c6930d469d963aacf83d8291af
+4. open localhost:8080
+user name :  Eslam
+password:    Acac123456
+Full name:	 Eslam Lotfy
+Jenkins URL: http://localhost:8080/
+5.create New job > create New item  > fress style project
+6. General > advanced >  User  Custom workSpace
+7. Build   >  select execute windown batch command
+8. command > dotnet test CsharpSelenuimFrameWork.csproj
+
+
+=========================================================================
+1.downlaod jenkins from https://www.jenkins.io/download/ Stable (LTS)
+2.Go to folder of jenkins
+3.password : deab25c6930d469d963aacf83d8291af
+4.linke jenkins : http://localhost:8080/login?from=%2F
+5.enter deab25c6930d469d963aacf83d8291af on Administrator password
+6.install suggesting plugines
+7.download jdk 8 java environment
+
+java -jar jenkins.war --enable-future-java
+
+
+
+----------------------------------------------------------------------------------------------------
+
+
+
+
+

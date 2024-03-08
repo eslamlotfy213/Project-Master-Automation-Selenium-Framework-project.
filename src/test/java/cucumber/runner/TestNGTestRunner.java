@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
 //AbstractTestNGCucumberTests to make TestNG  to be runner
 
 @CucumberOptions(features="src/test/java/cucumber/features",glue="cucumber.stepDefinition",
-        monochrome=true, tags = "@Regression", plugin= {"html:target/cucumber.html"})
+        monochrome=true, tags = "@Regression", plugin= {"html:target/cucumber.html" ,"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"})
 public class TestNGTestRunner extends AbstractTestNGCucumberTests{
 
 
