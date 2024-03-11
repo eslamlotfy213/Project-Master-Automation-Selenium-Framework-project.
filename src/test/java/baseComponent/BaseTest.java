@@ -1,8 +1,7 @@
-package testcomponent;
+package baseComponent;
 
 
 import Selenium.pages.LandingPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

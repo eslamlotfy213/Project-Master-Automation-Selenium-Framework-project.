@@ -1,14 +1,18 @@
-package abstractioncomponent;
+package abstractionComponent;
 
 import Selenium.pages.CartPage;
 import Selenium.pages.OrderPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.function.Function;
 
 public class AbstractionComponent {
 
@@ -32,6 +36,29 @@ public class AbstractionComponent {
      {
          this.driver = driver;
      }
+
+
+
+     public  void fluentWaitForElement(By findBy){
+
+         // Waiting 30 seconds for an element to be present on the page, checking
+         // for its presence once every 5 seconds.
+         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                 .withTimeout(Duration.ofSeconds(30L))
+                 .pollingEvery(Duration.ofSeconds(5L))
+                 .ignoring(NoSuchElementException.class);
+         WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+             public WebElement apply(WebDriver driver) {
+             if (driver.findElement(findBy).isDisplayed())
+                 {
+                     return driver.findElement(findBy);
+                 }else{
+                 return  null;
+              }
+            }
+         });
+     }
+
 
     public void waitForElementToAppear(By findBy)
     {

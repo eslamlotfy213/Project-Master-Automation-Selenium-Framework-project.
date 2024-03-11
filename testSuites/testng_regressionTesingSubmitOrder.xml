@@ -11,7 +11,7 @@
   </groups>
 
   <listeners>
-    <listener class-name="testcomponent.Listeners"/>
+    <listener class-name="baseComponent.Listeners"/>
   </listeners>
 
   <test  name="Error Validations Test">

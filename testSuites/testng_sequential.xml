@@ -4,7 +4,7 @@
 <suite parallel="none"  name="Suite" thread-count="2">
 
   <listeners>
-    <listener class-name="testcomponent.Listeners"/>
+    <listener class-name="baseComponent.Listeners"/>
   </listeners>
 
 

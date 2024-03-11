@@ -5,7 +5,7 @@ import Selenium.pages.ProductsPage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import testcomponent.BaseTest;
+import baseComponent.BaseTest;
 
 
 public class ViewOrderTest extends BaseTest {

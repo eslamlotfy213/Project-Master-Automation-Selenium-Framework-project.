@@ -1,6 +1,5 @@
-package Grid;
+package seleniumGridComponent;
 
-import Selenium.pages.LandingPage;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;

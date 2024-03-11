@@ -1,15 +1,18 @@
-package testcomponent;
+package baseComponent;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import resources.ExtentReporterNG;
 
-import java.io.IOException;
+import java.io.ByteArrayInputStream;
 
 public class Listeners extends BaseTest implements ITestListener{
     ExtentTest test;
@@ -45,8 +48,15 @@ public class Listeners extends BaseTest implements ITestListener{
 
         filePath = getScreenshot(result.getMethod().getMethodName(),driver);
         extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
-        //Screenshot, Attach to report
+
+
+        //Screenshot, Attach to Allure report
+        byte[] screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Failed Screenshot ....",new ByteArrayInputStream(screenshot));
+
     }
+
+
 
     @Override
     public void onTestSkipped(ITestResult result) {

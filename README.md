@@ -15,7 +15,7 @@
 
 📝 The main Frameworks included in the project:
 
-Grid > Cross-browser Testing
+seleniumGridComponent > Cross-browser Testing
 
 Page Object Model, also known as POM,design pattern
 
@@ -86,7 +86,7 @@ Maven Project
 
 pom.xml ( XML file that contains information about the project and configuration details used by Maven to build the project)
 
-- Grid execution
+- seleniumGridComponent execution
 - SP1_Login_VerifyLogin
 - SmokeTesting
 - RegressionTesting 
@@ -101,7 +101,7 @@ pom.xml ( XML file that contains information about the project and configuration
 - path : /reports//index.html
 
   <listeners>
-    <listener class-name="testcomponent.Listeners"/>
+    <listener class-name="baseComponent.Listeners"/>
   </listeners>
 
 - mvn test

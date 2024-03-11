@@ -1,4 +1,4 @@
-package cucumber.stepDefinition;
+package cucumberBDD.stepDefinition;
 
 import Selenium.pages.*;
 import io.cucumber.java.After;
@@ -9,13 +9,11 @@ import io.cucumber.java.en.When;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import testcomponent.BaseTest;
+import baseComponent.BaseTest;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.List;
 
 public class StepDefinition extends BaseTest {
 

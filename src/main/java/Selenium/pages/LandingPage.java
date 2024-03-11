@@ -1,5 +1,5 @@
 package Selenium.pages;
-import abstractioncomponent.AbstractionComponent;
+import abstractionComponent.AbstractionComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

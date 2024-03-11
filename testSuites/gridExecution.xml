@@ -7,7 +7,7 @@
   <test name="SelenuimGrid_chrome" >
     <parameter name="browserName" value="chrome"></parameter>
     <classes>
-      <class name="Grid.Runner"/>
+      <class name="seleniumGridComponent.Runner"/>
     </classes>
   </test>
 
@@ -15,7 +15,7 @@
   <test name="SelenuimGrid_firefox" >
     <parameter name="browserName" value="firefox"></parameter>
     <classes>
-      <class name="Grid.Runner2"/>
+      <class name="seleniumGridComponent.Runner2"/>
     </classes>
   </test>
 

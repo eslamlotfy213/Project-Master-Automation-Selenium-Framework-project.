@@ -6,8 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import resources.GetDataFromExcelintoDatadriver;
-import testcomponent.BaseTest;
-import testcomponent.Retry;
+import baseComponent.BaseTest;
+import baseComponent.Retry;
 
 
 public class SP1_Login_VerifyLoginTest extends BaseTest {

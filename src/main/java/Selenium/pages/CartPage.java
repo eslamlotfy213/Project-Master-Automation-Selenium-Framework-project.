@@ -1,6 +1,6 @@
 package Selenium.pages;
 
-import abstractioncomponent.AbstractionComponent;
+import abstractionComponent.AbstractionComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class CartPage extends AbstractionComponent {
          this.driver = driver;
     }
 
-    private By TitleCartSections = By.cssSelector(".cartSection h3");
+    private By titleCartSections = By.cssSelector(".cartSection h3");
     private  By checkoutbutton = By.cssSelector(".totalRow button");
 
 
@@ -24,7 +24,7 @@ public class CartPage extends AbstractionComponent {
 
     public List<WebElement> getCartSectionsList()
     {
-        return driver.findElements(TitleCartSections);
+        return driver.findElements(titleCartSections);
     }
 
     public Boolean verifyProductDisplay(String productName)

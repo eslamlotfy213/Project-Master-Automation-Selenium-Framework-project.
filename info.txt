@@ -548,6 +548,11 @@ Verify that the API handles cases where the limit parameter exceeds the actual n
 To run allure report
 •	Open folder directory where [allure-results]
 •	Run cmd and enter : allure serve allure-results
+
+
+- usgin allure report for cucumbr
+- usgin allure report for testng
+- add allure.attachments()
 ----------------------------------------Jenkins  pipline ci cd ----------------------------------------------------------------
 open jenkins
 create freestyle
@@ -600,9 +605,18 @@ java -jar jenkins.war --enable-future-java
 
 
 
-----------------------------------------------------------------------------------------------------
+--------------------fluent wait--------------------------------------------------------------------------------------------------------------------------
+finds the Web elements  repeatedly at regular intervals of times until timeouts  or till objects get found
+timeout : 30s , polling  2 sec
 
 
+unlike webdriver wait > need to build the customized wait
 
 
+- Wait > interface
+- FluentWait > class
+
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 

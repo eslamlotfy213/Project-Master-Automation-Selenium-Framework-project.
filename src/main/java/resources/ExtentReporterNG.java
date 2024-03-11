@@ -18,7 +18,5 @@ public class ExtentReporterNG {
             extent.setSystemInfo("Environment","Testing");
             extent.setSystemInfo("Release","Current Sprint");
             return extent;
-
-
         }
     }

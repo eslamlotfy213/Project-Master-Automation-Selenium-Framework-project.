@@ -2,9 +2,7 @@ package Selenium.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import testcomponent.BaseTest;
-
-import java.io.IOException;
+import baseComponent.BaseTest;
 
 public class ErrorValidationTest extends BaseTest {
 
