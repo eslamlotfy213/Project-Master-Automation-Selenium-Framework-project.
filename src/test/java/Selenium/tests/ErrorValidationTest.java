@@ -1,4 +1,4 @@
-package Selenium.tests;
+package selenium.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

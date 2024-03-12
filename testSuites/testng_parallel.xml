@@ -11,13 +11,13 @@
 
   <test  name="Error Validations Test">
     <classes>
-      <class name="Selenium.tests.ErrorValidationTest"/>
+      <class name="selenium.tests.ErrorValidationTest"/>
     </classes>
   </test> <!-- Test -->
 
   <test  name="Submit Order Test">
     <classes>
-      <class name="Selenium.tests.SubmitOrderTest"/>
+      <class name="selenium.tests.SubmitOrderTest"/>
     </classes>
   </test> <!-- Test -->
 

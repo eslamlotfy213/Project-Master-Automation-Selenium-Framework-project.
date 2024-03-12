@@ -1,4 +1,4 @@
-package Selenium.tests;
+package selenium.tests;
 
 import Selenium.pages.ProductDetails;
 import Selenium.pages.ProductsPage;

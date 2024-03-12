@@ -9,7 +9,7 @@
 
   <test name="SP1_Login_VerifyLogin Test">
     <classes>
-      <class name="Selenium.tests.SP1_Login_VerifyLoginTest"/>
+      <class name="selenium.tests.SP1_Login_VerifyLoginTest"/>
     </classes>
   </test> <!-- Test -->
 

@@ -618,5 +618,43 @@ unlike webdriver wait > need to build the customized wait
 
 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------json file to string to hash map------------------------------------------------------------------------------------------------------
+As Rahul said the method with only file parameter has been deprecated.Please use the following code
+
+FileUtils.readFileToString(new File(System.getProperty("user.dir") +"\\src\\test\\java\\rahulshetty\\data\\purchaseorder.json"),
+        StandardCharsets.UTF_8);
+and write import java.nio.charset.StandardCharsets;  at top where import statements are written.
+
+    @DataProvider
+    public Object[][] getData() throws IOException {
+
+//        HashMap<String,String> map = new HashMap<String,String>();
+//        map.put("email","dexcomnew98@gmail.com");
+//        map.put("password","User123#");
+//        map.put("product","ZARA COAT 3");
+//
+//
+//        HashMap<String,String> map1 = new HashMap<String,String>();
+//        map1.put("email","postman2024@gmail.com");
+//        map1.put("password","User123#");
+//        map1.put("product","IPHONE 13 PRO");
+
+
+
+        List<HashMap<String, String>> data= getJsonDataToMap();
+
+        return new Object[][]
+                {
+                        {data.get(0)}, {data.get(1)}
+                };
+
+    }
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 

@@ -1,4 +1,4 @@
-package Selenium.tests;
+package selenium.tests;
 
 
 import org.apache.poi.ss.usermodel.DataFormatter;
