@@ -603,8 +603,6 @@ Jenkins URL: http://localhost:8080/
 
 java -jar jenkins.war --enable-future-java
 
-
-
 --------------------fluent wait--------------------------------------------------------------------------------------------------------------------------
 finds the Web elements  repeatedly at regular intervals of times until timeouts  or till objects get found
 timeout : 30s , polling  2 sec
