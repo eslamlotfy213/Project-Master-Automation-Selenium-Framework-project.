@@ -647,11 +647,44 @@ and write import java.nio.charset.StandardCharsets;  at top where import stateme
                 };
 
     }
----------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------to run the cucumber paralle-----------------------------------------------------------------------------------------------------
+to run feature file has 2 scenario configure runner and  pom.xml and adding the below code
+1. go to runner and adding the below
 
+  // parallel = true  : to turn on
+  @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
 
+        return super.scenarios();
+    }
+   // parallel => false : to turn off
+  @Override
+    @DataProvider(parallel = false)
+    public Object[][] scenarios() {
 
+        return super.scenarios();
+    }
+2. go to the pom.xml and configure the below on surefire
 
+                                    <properties>
+                                        <property>
+                                            <name>dataproviderthreadcount</name>
+                                            <value>2</value>
+                                        </property>
+3. add for feature file for example 2 scenarios outline
+ for example :
+       | dexcomnew98@gmail.com | User123# | ZARA COAT 3 |
+       | postman2024@gmail.com | User123# | ADIDAS ORIGINAL   |
+-------------------add plugin to project----------------------------------------------------------------------------------------------------------------------------------
+- Adding the files on test runner:
+   "html:target/cucumberFolder/cucumber.html" ,
+   "pretty","json:target/cucumberFolder/report.json",
+   "pretty","json:target/cucumberFolder/report.xml",
+
+- Adding timeline on test runner:
+   "timeline:target/cucumber",
+----------------------------------------------------------------------------------------------------------------------------------------
 
 
 

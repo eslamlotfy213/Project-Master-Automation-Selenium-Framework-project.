@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import baseComponent.BaseTest;
+import org.testng.annotations.AfterClass;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -60,14 +61,12 @@ public class StepDefinition extends BaseTest {
 
         String actualMessage = confirmationPage.getconfirmationMessage();
         Assert.assertTrue(actualMessage.equalsIgnoreCase(string));
-
     }
 
     @Then("^\"([^\"]*)\" message is displayed$")
     public void something_message_is_displayed(String strArg1) throws Throwable {
 
         Assert.assertEquals(strArg1, landingPage.getErrorMessage());
-
     }
 
     @After
@@ -76,8 +75,7 @@ public class StepDefinition extends BaseTest {
             byte[] screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             Allure.addAttachment("Failed Screenshot ....",new ByteArrayInputStream(screenshot));
         }
+
         driver.close();
     }
-
-
 }
