@@ -19,21 +19,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout Git repository
+      - name: Checkout Git repository
         uses: actions/checkout@v2
 
       - name: Install Java and Maven
         uses: actions/setup-java@v2
         with:
-          java-version: '18'
+          java-version: '11' # Use a valid Java version (e.g., 11)
           distribution: 'adopt'
           cache: maven
-
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@latest
-
-      - name: Install Firefox
-        uses: browser-actions/setup-firefox@latest
 
       - name: Build the Project
         run: mvn clean install -DskipTests
@@ -45,30 +39,3 @@ jobs:
           path: |
             ${{ github.workspace }}/target
             ${{ github.workspace }}/reports
-
-      - name: Install Java and Maven
-        uses: actions/setup-java@v2
-        with:
-          java-version: '18'
-          distribution: 'adopt'
-          cache: maven
-
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@latest
-
-      - name: Install Firefox
-        uses: browser-actions/setup-firefox@latest
-
-      - name: Download target folder
-        uses: actions/download-artifact@v2
-        with:
-          name: target
-
-      - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          name: Test Results
-          path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml
-          reporter: java-junit
-          java-version: 18
