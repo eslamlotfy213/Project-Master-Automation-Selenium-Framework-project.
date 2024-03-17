@@ -1,26 +1,74 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Java CI with Maven
+
 on:
+  pull_request:
+    branches:
+      - master
+      - issue-*
   push:
     branches:
-      - "**" # This will run on all branches and must be quoted to be handled by YAML
+      - master
+      - issue-*
 
 jobs:
   build_and_test:
-    runs-on: ${{ matrix.os }}
-    env:
-      RUNNER_OS: true
-      HEADLESS_CHROME: true
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+    name: Build and Test
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v2
-        with:
-          distribution: 'zulu'
-          java-version: 18
-      - name: Run tests with Maven
-        run: mvn test
-      # Handle remote server chromedriver
+      - name: checkout Git repository
+        uses: actions/checkout@v2
 
+      - name: Install Java and Maven
+        uses: actions/setup-java@v2
+        with:
+          java-version: '18'
+          distribution: 'adopt'
+          cache: maven
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Install Firefox
+        uses: browser-actions/setup-firefox@latest
+
+      - name: Build the Project
+        run: mvn clean install -DskipTests
+
+      - name: Upload target folder
+        uses: actions/upload-artifact@v2
+        with:
+          name: target
+          path: |
+            ${{ github.workspace }}/target
+            ${{ github.workspace }}/reports
+
+      - name: Install Java and Maven
+        uses: actions/setup-java@v2
+        with:
+          java-version: '18'
+          distribution: 'adopt'
+          cache: maven
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Install Firefox
+        uses: browser-actions/setup-firefox@latest
+
+      - name: Download target folder
+        uses: actions/download-artifact@v2
+        with:
+          name: target
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Test Results
+          path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml
+          reporter: java-junit
+          java-version: 18
