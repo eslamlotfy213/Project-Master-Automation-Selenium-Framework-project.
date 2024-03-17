@@ -120,7 +120,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-surefire-plugin</artifactId>
-                            <version>3.0.0-M6</version>
+                            <version>3.2.5</version>
                             <configuration>
                                 <suiteXmlFiles>
                                     <suiteXmlFile>testSuites/testng_sequential.xml</suiteXmlFile>
@@ -165,7 +165,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-surefire-plugin</artifactId>
-                            <version>3.0.0-M6</version>
+                            <version>3.2.5</version>
                             <configuration>
                                 <suiteXmlFiles>
                                     <suiteXmlFile>testSuites/testng_regressionTesingSubmitOrder.xml</suiteXmlFile>
@@ -186,7 +186,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M6</version>
+                    <version>3.2.5</version>
                      <configuration>
                                     <suiteXmlFiles>
                                         <suiteXmlFile>testSuites/testng_parallel.xml</suiteXmlFile>
