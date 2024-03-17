@@ -2,9 +2,11 @@ name: Selenium with TestNG - CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
   build:
@@ -13,13 +15,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Set up JDK 11 for x64
+        
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
-          distribution: 'temurin'
-          architecture: x64
+          java-version: 'adopt@1.11'  # Specify the desired Java version (e.g., 11)
 
       - name: Build with Maven
-        run: mvn -B clean test
+        run: mvn clean install
+
+      - name: Run tests
+        run: mvn test
