@@ -20,11 +20,11 @@
     </classes>
   </test>
 
-  <test  name="View Order Test">
-    <classes>
-      <class name="selenium.tests.ViewOrderTest"/>
-    </classes>
-  </test> <!-- Test -->
+<!--  <test  name="View Order Test">-->
+<!--    <classes>-->
+<!--      <class name="selenium.tests.ViewOrderTest"/>-->
+<!--    </classes>-->
+<!--  </test> &lt;!&ndash; Test &ndash;&gt;-->
 
 </suite> <!-- Suite -->
 

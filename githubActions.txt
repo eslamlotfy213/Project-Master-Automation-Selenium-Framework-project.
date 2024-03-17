@@ -1,0 +1,96 @@
+GitHub Actions
+Feature in GitHub to create custom Automated Workflows
+- automate SDLC workflows
+- implement CI CD DevOps
+
+create new repository
+open actions tab
+create your own github actions
+open https://gist.github.com/weibeld/f136048d0a82aacc063f42e684e3c494
+copy the content 
+
+ DEMO
+ Step 1 - Signup and Login to GitHub.com
+ Step 2 - Create a new Repository
+ Step 3 - In the repo create a folder .github/workflows
+ Step 4 - In the folder create a YAML file with .yml extension
+ Step 5 - Add the content of the workflow in the file
+ Step 6 - Commit and push the changes
+ Step 7 - Goto Repo main page and click “Actions” tab
+ Step 8 - Select the workflow from left sidebar and check the logs and results
+
+
+ Terms:
+ WORKFLOW : collection of jobs, defined in a YAML file
+ name:
+
+
+ EVENTS : any activity in the repo that can trigger a workflow 
+ on:
+
+
+ JOBS : collection of steps
+ jobs:
+
+
+ STEPS : actions to be taken, commands, scripts
+ steps:
+ 
+ Chain Jobs - :needs
+
+
+
+
+
+
+https://gist.github.com/weibeld/f136048d0a82aacc063f42e684e3c494
+
+
+
+jenkins
+
+githun actions by micrisoft
+build test deploy
+no installation
+faster execution
+it follows the dry principals > don't repeat yourself
+
+
+components :
+
+workflows > configurable automated process that will run  one or more time
+
+events is specific activity in the repository that trigger workflows
+
+jobs set of steps in the workflow that executed on same Runner
+
+Steps
+Actions
+
+
+
+YAML files
+Define githup actions workflows
+stored  at .github/workflows
+
+--------------------------------------------------------------------------------------------------------------------------------
+https://github.com/tau-github-actions-for-testing/tau-github-actions-e1
+
+2. Where do you store the GitHub Actions?
+.github/workflows
+
+7. What is a big advantage to use GitHub Actions compared to Jenkins?
+Very fast and no maintenance
+
+Events => more then 35 different events: 
+ - has differnet events 
+     on workflow_dispatch
+	 on scheduled
+	 on pull_request
+	 on repository_dispath
+	 on issues
+ 
+ -has differnet branches 
+       main 
+	   master
+
