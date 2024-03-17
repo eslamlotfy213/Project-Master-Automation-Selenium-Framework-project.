@@ -25,7 +25,7 @@ jobs:
       - name: Install Java and Maven
         uses: actions/setup-java@v4
         with:
-          java-version: '11' # Use a valid Java version (e.g., 11)
+          java-version: '18' # Use a valid Java version (e.g., 11)
           distribution: 'adopt'
           cache: maven
 
