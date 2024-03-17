@@ -21,6 +21,6 @@ jobs:
           distribution: 'zulu'
           java-version: 18
       - name: Run tests with Maven
-        working-directory: webdriver_java
         run: mvn test
       # Handle remote server chromedriver
+
