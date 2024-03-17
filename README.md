@@ -1,16 +1,17 @@
-"# MasterSelenuimFramework" 
+"# MasterSelenuimFramework"
 
 
 # Project-Master-Automation-Selenium-Framework project.
 
-✨ Project # 2024✨
+✨ Updated Project # 2024✨
 
 📅 Project Date: November 26, 2023
+
+![uploads](https://github.com/eslamlotfy213/MasterSelenuimFramework/assets/107763855/f9c45052-1627-4ed5-9961-252a8f252658)
 
 ✨ Master-Automation-Selenium-Framework Practice ==> Selenium Test Automation ✨
 
 🌐 Website : https://rahulshettyacademy.com/client
-
 
 
 📝 The main Frameworks included in the project:
@@ -20,11 +21,11 @@ seleniumGridComponent > Cross-browser Testing
 Page Object Model, also known as POM,design pattern
 
 Data driven testing framework  
-    1.GetDataFrom-Excel-into-Data-driver
-    2.Data-driver annotation
+1.GetDataFrom-Excel-into-Data-driver
+2.Data-driver annotation
 
 BDD (Behavior Driven Development) Framework  > Cucumber Framework
-     1.Example for Test-data
+1.Example for Test-data
 
 Maven build management tools basics
 
@@ -89,9 +90,9 @@ pom.xml ( XML file that contains information about the project and configuration
 - seleniumGridComponent execution
 - SP1_Login_VerifyLogin
 - SmokeTesting
-- RegressionTesting 
+- RegressionTesting
 - Parallel execution
-- sequential  execution 
+- sequential  execution
 
 
 🧱Reports
