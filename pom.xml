@@ -125,7 +125,7 @@
                                 <suiteXmlFiles>
                                     <suiteXmlFile>testSuites/testng_sequential.xml</suiteXmlFile>
                                 </suiteXmlFiles>
-                              <testFailureIgnore>true</testFailureIgnore>
+                              
                             </configuration>
                         </plugin>
                     </plugins>
@@ -149,7 +149,7 @@
                                 <suiteXmlFiles>
                                     <suiteXmlFile>testSuites/testng_smokeTesingErrorValidation.xml</suiteXmlFile>
                                 </suiteXmlFiles>
-                           <testFailureIgnore>true</testFailureIgnore>
+                           
                             </configuration>
                         </plugin>
                     </plugins>
@@ -172,7 +172,7 @@
                                 <suiteXmlFiles>
                                     <suiteXmlFile>testSuites/testng_regressionTesingSubmitOrder.xml</suiteXmlFile>
                                 </suiteXmlFiles>
-                               <testFailureIgnore>true</testFailureIgnore>
+                               
                             </configuration>
                         </plugin>
                     </plugins>
@@ -193,7 +193,7 @@
                      <configuration>
                                     <suiteXmlFiles>
                                         <suiteXmlFile>testSuites/testng_parallel.xml</suiteXmlFile>
-                                    <testFailureIgnore>true</testFailureIgnore>
+                                    
                                     </suiteXmlFiles>
                          <!-- to run feature file has 2 scenario configure runner and and pom.xml and adding the below code-->
                                     <properties>
