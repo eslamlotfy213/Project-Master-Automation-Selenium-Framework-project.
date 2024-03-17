@@ -112,8 +112,6 @@
 
 
     <profiles>
-
-
         <profile>
             <id>E2E_shakedown</id>
             <build>
