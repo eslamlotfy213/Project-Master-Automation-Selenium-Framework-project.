@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Mar 17 16:23:21 EET 2024","Sun Mar 17 16:23:22 EET 2024","1051","Suite","Error Validations Test","selenium.tests.ErrorValidationTest","selenium.tests.ErrorValidationTest","Check_loginValidationWrongPassword","Check_loginValidationWrongPassword",""
+"passed","Sun Mar 17 16:23:27 EET 2024","Sun Mar 17 16:23:33 EET 2024","5828","Suite","Submit Order Test","selenium.tests.SubmitOrderTest","selenium.tests.SubmitOrderTest","Check_submitOrder","Check_submitOrder",""
+"passed","Sun Mar 17 16:23:14 EET 2024","Sun Mar 17 16:23:15 EET 2024","1342","Suite","Error Validations Test","selenium.tests.ErrorValidationTest","selenium.tests.ErrorValidationTest","Check_loginValidationWrongEmail","Check_loginValidationWrongEmail",""
+"passed","Sun Mar 17 16:23:14 EET 2024","Sun Mar 17 16:23:21 EET 2024","7437","Suite","Submit Order Test","selenium.tests.SubmitOrderTest","selenium.tests.SubmitOrderTest","Check_submitOrder","Check_submitOrder",""
+"unknown","Sun Mar 17 16:23:08 EET 2024","Sun Mar 17 16:23:08 EET 2024","1","Suite","Error Validations Test","selenium.tests.ErrorValidationTest","selenium.tests.ErrorValidationTest","Check_loginValidation","Check_loginValidation",""
