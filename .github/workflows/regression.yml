@@ -1,4 +1,4 @@
-name: Regression test workflowa
+name: Regression test workflow
 
 on:
   push:
