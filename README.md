@@ -1,5 +1,5 @@
-[![nightly build at 11pm](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/maven.yml/badge.svg)](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/maven.yml)
-
+[![Java CI with Maven](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/maven.yml/badge.svg)](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/maven.yml)
+[![nightly build at 11pm](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/nightly-build.yml/badge.svg)](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/nightly-build.yml)
 "# MasterSelenuimFramework"
 
 
