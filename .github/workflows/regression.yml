@@ -23,16 +23,10 @@ jobs:
       - name: Run Test Cases Using Maven
         run: mvn test -PErrorValidation -DBrowserName=chrome
 
-      - name: Install Allure
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y allure
-
-      - name: Generate Allure Report
-        run: allure generate --clean
-
-      - name: Publish Report
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Allure report action # Step to generate Allure report
+        uses: simple-elf/allure-report-action@master
+        if: always() # Execute even if previous steps fail
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: allure-report
+          allure_results: D:\Selenium4\Selenuim_Framework_Design\allure-results # Specify the directory containing Allure results
+          allure_history: allure-history # Specify the directory to store Allure history
+          keep_reports: 5 # Specify the number of previous reports to keep
