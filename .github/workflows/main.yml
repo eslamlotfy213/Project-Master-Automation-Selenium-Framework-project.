@@ -1,7 +1,7 @@
 name: run unit test on feature branch
 
 on:
-  pull_request:
+  push:
     branches:
      - master
      
