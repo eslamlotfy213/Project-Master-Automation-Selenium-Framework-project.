@@ -8,10 +8,6 @@ on:
     branches:
       - master
       - issue-*
-  push:
-    branches:
-      - master
-      - issue-*
 
 jobs:
   build_and_test:
