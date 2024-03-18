@@ -6,18 +6,15 @@ on:
 
 jobs:
   nightly_build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
-        
-      - name: Run Unit Tests
-        run: mvn test
-
-      - name: Build with Maven
-        run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
-
-      - uses: actions/upload-artifact@master
+        uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
         with:
-          name: digibank.war
-          path: ./target/*digitalbank*.war
+          distribution: 'temurin'
+          java-version: '18'
+          cache: maven
+      - name: Run Test Cases Using Maven
+        run: mvn clean test
