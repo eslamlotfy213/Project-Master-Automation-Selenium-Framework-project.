@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/maven.yml/badge.svg)](https://github.com/eslamlotfy213/MasterSelenuimFramework/actions/workflows/maven.yml)
+
 "# MasterSelenuimFramework"
 
 
