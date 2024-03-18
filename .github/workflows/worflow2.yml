@@ -1,0 +1,27 @@
+name: run unit test on feature branch
+
+on:
+  push:
+    branches:
+     - master
+     
+jobs:
+  run_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4.1.2
+        
+      - name: Install Java and Maven
+        uses: actions/setup-java@v4.2.1
+        with:
+          java-version: '18' # Use a valid Java version (e.g., 11)
+          distribution: 'adopt'
+          cache: maven
+          
+      - name: run with Maven
+        run: mvn test
+       
+   
+
