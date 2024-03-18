@@ -1,33 +1,30 @@
 name: Regression test workflowa
 
 on:
-  pull_request:
-    branches:
-      - master
   push:
     branches:
       - master
 
-        jobs:
-          build:
-            runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-            steps:
-             - name: Checkout code
-               uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-             - name: Set up JDK
-               uses: actions/setup-java@v4
-               with:
-                 distribution: 'temurin'
-                 java-version: '18'
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '11'
 
-             - name: Build with maven
-               uses: mvn -B clean install
+      - name: Build with Maven
+        run: mvn -B clean install
 
-             - name: Run tests
-               uses: mvn test
+      - name: Run tests
+        run: mvn test
 
-             - name: Generate Allure reports
-                run: |
-                  allure generate --clean 
+      - name: Generate Allure reports
+        run: |
+          allure generate --clean
