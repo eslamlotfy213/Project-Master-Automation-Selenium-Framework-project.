@@ -20,7 +20,7 @@ jobs:
           java-version: '18'
 
       - name: Build with Maven
-        run: mvn -B clean install
+        run: mvn clean install -DskipTests
 
       - name: Run tests
         run: mvn test
