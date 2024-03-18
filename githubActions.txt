@@ -27,7 +27,10 @@ copy the content
 
  EVENTS : any activity in the repo that can trigger a workflow 
  on:
-
+ pull_request:
+ push
+ scheduler
+ repository_dispatch
 
  JOBS : collection of steps
  jobs:
